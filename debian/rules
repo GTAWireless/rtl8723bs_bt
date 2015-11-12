@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+PACKAGE = rtl8723bs-bt
+
+%:
+	dh $@ --with-systemd
+
+override_dh_auto_install:
+	$(MAKE) CC=$(CC) PREFIX=$(PWD)/debian/$(PACKAGE) install
