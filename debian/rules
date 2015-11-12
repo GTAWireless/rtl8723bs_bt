@@ -11,3 +11,5 @@ PACKAGE = rtl8723bs-bt
 
 override_dh_auto_install:
 	$(MAKE) CC=$(CC) PREFIX=$(PWD)/debian/$(PACKAGE) install
+	dh_systemd_enable --name=bt_rtk_hciattach
+	dh_systemd_start
