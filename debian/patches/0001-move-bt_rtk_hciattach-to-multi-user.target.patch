@@ -1,0 +1,18 @@
+From: Jason Abele <jason.abele@gmail.com>
+Date: Thu, 12 Nov 2015 15:41:53 -0800
+Subject: move bt_rtk_hciattach to multi-user.target
+
+---
+ bt_rtk_hciattach.service | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bt_rtk_hciattach.service b/bt_rtk_hciattach.service
+index e4c2f6d..a9f92c2 100644
+--- a/bt_rtk_hciattach.service
++++ b/bt_rtk_hciattach.service
+@@ -12,4 +12,4 @@ ExecStartPre=/sbin/bt_reset
+ ExecStart=/sbin/rtk_hciattach -n -s 115200 /dev/ttyS1 rtk_h5
+ 
+ [Install]
+-WantedBy=bluetooth.target
++WantedBy=multi-user.target
