@@ -26,3 +26,4 @@ override_dh_auto_install:
 	$(MAKE) CC=$(CC) PREFIX=$(PWD)/debian/$(PACKAGE) install
 	dh_systemd_enable --name=bt_rtk_hciattach
 	dh_systemd_start
+	dh_link lib/systemd/system/bt_rtk_hciattach.service etc/systemd/system/bluetooth.target.wants/bt_rtk_hciattach.service
