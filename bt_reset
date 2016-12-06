@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Tied to PB4 on the R8
 # PB = Bank B = Bank 1
@@ -16,9 +16,10 @@ failed () {
         exit ${status}
 }
 
-# Make sure this is a C.H.I.P. 
-[ "$(cat /proc/device-tree/model)" = "NextThing C.H.I.P." ] || \
-        failed "This is not a C.H.I.P. ... exiting" $?
+# Make sure this is a Crumb
+[ "$(cat /proc/device-tree/model)" = "NextThing Crumb" -o \
+  "$(cat /proc/device-tree/model)" = "NextThing C.H.I.P." ] || \
+        failed "This is not a Crumb ... exiting" $?
 
 # Make the BT_RST_N GPIO available to userspace
 if [ ! -e /sys/class/gpio/gpio${BT_RST_N} ]; then
