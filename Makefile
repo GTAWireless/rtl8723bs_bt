@@ -13,6 +13,6 @@ clean:
 install:
 	mkdir -p $(PREFIX)/lib/firmware/rtl_bt
 	mkdir -p $(PREFIX)/sbin
-	cp -p rtlbt_* $(PREFIX)/lib/firmware/rtl_bt/.
+	cp -p *_fw $(PREFIX)/lib/firmware/rtl_bt/.
 	cp -p rtk_hciattach $(PREFIX)/sbin/
 	cp -p bt_reset $(PREFIX)/sbin/

@@ -114,6 +114,14 @@ const RT_U8 Extension_Section_SIGNATURE[4] = {0x51,0x04,0xFD,0x77};
 #define ROM_LMP_8723b           0x8723
 #define ROM_LMP_8821a           0x8821
 #define ROM_LMP_8761a           0x8761
+#define ROM_LMP_8703a           0x8723
+#define ROM_LMP_8763a           0x8763
+#define ROM_LMP_8703b           0x8703
+#define ROM_LMP_8723c           0x8703
+#define ROM_LMP_8822b           0x8822
+#define ROM_LMP_8723d           0x8723
+#define ROM_LMP_8821c           0x8821
+
 
 /* HCI data types */
 #define H5_ACK_PKT              0x00
@@ -281,6 +289,13 @@ uint16_t project_id[]=
     ROM_LMP_8723b,
     ROM_LMP_8821a,
     ROM_LMP_8761a,
+    ROM_LMP_8703a,
+    ROM_LMP_8763a,
+    ROM_LMP_8703b,
+    ROM_LMP_8723c,
+    ROM_LMP_8822b,
+    ROM_LMP_8723d,
+    ROM_LMP_8821c,
     ROM_LMP_NONE
 };
 
@@ -1433,7 +1448,7 @@ static const char *get_firmware_name()
 	int ret = 0;
 	struct stat st;
 
-	ret = sprintf(firmware_file_name, FIRMWARE_DIRECTORY"rtlbt_fw");
+	ret = sprintf(firmware_file_name, FIRMWARE_DIRECTORY"rtl8723ds_fw");
 
 	return firmware_file_name;
 }
